@@ -1,0 +1,8 @@
+#account-form-container.center-vertical
+	form(method="post")#account-form.form-horizontal.well
+		h2
+		hr
+		each item in tasks
+			h3
+				a(href='/task/' + item._id) #{item.title}
+		.clearfix

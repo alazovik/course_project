@@ -1,0 +1,28 @@
+
+#account-form-container.center-vertical
+	form(method="post")#account-form.form-horizontal.well
+		h2
+		h6#sub1 Здесь вы можете решить задачу.
+		hr
+		.form-group
+			label.control-label.col-sm-3 Заголовок
+			.col-sm-9
+				input.form-control#title(name='title', value=task.title)
+		.form-group
+			label.control-label.col-sm-3 Текст
+			.col-sm-9
+				textarea.form-control#text(name='text') #{task.text}
+
+		.form-group
+			label.control-label.col-sm-3 Ваш ответ
+			.col-sm-9
+				input.form-control#answer(type='text', name='answer')
+
+		hr
+		.form-buttons
+			button(type='submit')#solve-task-btn.btn.btn-primary
+		.clearfix
+
+// display form errors in a custom modal window //
+
+include modals/form-errors

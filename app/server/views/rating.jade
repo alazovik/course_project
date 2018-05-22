@@ -1,0 +1,28 @@
+
+extends layout
+
+block content
+	include header
+	div.container(style='margin:20px')
+		table.table.table-bordered.table-striped
+			thead
+				tr
+					th(style='width:40px') #
+					th(style='width:180px') Имя
+					th(style='width:200px') Страна
+					th(style='width:180px') Имя пользователя
+					th Задач решено
+			tbody
+			- for (var i = 0; i < accts.length; i++)
+				tr
+					td= i+1
+					td= accts[i].name
+					td= accts[i].country
+					td= accts[i].user
+					td= accts[i].tasks
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+	script(src='/js/views/header.js')
+	script(src='/js/controllers/headerController.js')
